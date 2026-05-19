@@ -645,6 +645,26 @@
                         @if (jsonData) {{{jsonData?.hbBarts}}} @else {}
                       </td>
                     </tr>
+                    <!-- HbA1c  -->
+                    <tr class="border-b border-primary-700 text-neutral-800">
+                      <td class="whitespace-nowrap px-6 py-1 font-bold">
+                        HbA1c
+                      </td>
+                      <td class="whitespace-nowrap px-6 py-1 font-medium">
+                        <input
+                          autocomplete="off"
+                          type="number"
+                          id="hbA1c"
+                          name="hbA1c"
+                          [(ngModel)]="modelMainUI.others3"
+                          (focus)="onOtherFocus()"
+                          class="border-2 w-24 border-secondary-900"
+                        />
+                      </td>
+                      <td class="whitespace-nowrap px-6 py-1 font-medium">
+                        @if (jsonData) {{{jsonData?.others3}}} @else {}
+                      </td>
+                    </tr>
                     <!-- Hb A  -->
                     <tr class="border-b border-primary-700 text-neutral-800">
                       <td class="whitespace-nowrap px-6 py-1 font-bold">
@@ -817,6 +837,7 @@
                             +modelMainUI.hbA2 +
                             +modelMainUI.hbE +
                             +modelMainUI.hbD +
+                            +modelMainUI.others3 +
                             +modelMainUI.hbS
                           ).toFixed(1)
                         }}
@@ -828,44 +849,6 @@
             </div>
           </div>
         </div>
-
-        <!-- Show toast -->
-        @if ((+modelMainUI.hbA) + (+modelMainUI.hbF) + (+modelMainUI.hbD) +
-        (+modelMainUI.hbE) + (+modelMainUI.hbA2) + (+modelMainUI.hbJ) +
-        (+modelMainUI.hbL) + (+modelMainUI.hbQ) + (+modelMainUI.hbS) +
-        (+modelMainUI.hbBarts) > 100.05) {
-        <div
-          class="pointer-events-auto mx-auto mb-4 hidden w-96 max-w-full rounded-lg bg-warning-100 bg-clip-padding text-sm text-warning-700 shadow-lg shadow-black/5 data-[te-toast-show]:block data-[te-toast-hide]:hidden"
-          id="static-example"
-          role="alert"
-          aria-live="assertive"
-          aria-atomic="true"
-          data-te-autohide="false"
-          data-te-toast-init
-          data-te-toast-show
-        >
-          <div
-            class="flex items-center justify-between rounded-t-lg border-b-2 border-warning-200 bg-warning-100 bg-clip-padding px-4 pb-2 pt-2.5 text-warning-700"
-          >
-            <p class="flex items-center font-bold text-warning-700">
-              <span class="mr-2 h-4 w-4">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  fill="currentColor"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    d="M9.401 3.003c1.155-2 4.043-2 5.197 0l7.355 12.748c1.154 2-.29 4.5-2.599 4.5H4.645c-2.309 0-3.752-2.5-2.598-4.5L9.4 3.003zM12 8.25a.75.75 0 01.75.75v3.75a.75.75 0 01-1.5 0V9a.75.75 0 01.75-.75zm0 8.25a.75.75 0 100-1.5.75.75 0 000 1.5z"
-                    clip-rule="evenodd"
-                  />
-                </svg>
-              </span>
-              Result Not Valid! Maximum Result will be 100.
-            </p>
-          </div>
-        </div>
-        }
 
         <!-- Input Row 04 -->
         <div
@@ -1042,19 +1025,6 @@
             type="submit"
             data-te-submit-btn-ref
             Validate
-            [disabled]="
-              +modelMainUI.hbA +
-                +modelMainUI.hbF +
-                +modelMainUI.hbD +
-                +modelMainUI.hbE +
-                +modelMainUI.hbA2 +
-                +modelMainUI.hbJ +
-                +modelMainUI.hbQ +
-                +modelMainUI.hbS +
-                +modelMainUI.hbC +
-                +modelMainUI.hbBarts >
-              100.05
-            "
             data-te-ripple-init
             data-te-ripple-color="light"
             style="

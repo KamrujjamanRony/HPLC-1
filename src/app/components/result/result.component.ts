@@ -91,7 +91,7 @@ export class ResultComponent implements OnInit, OnDestroy {
                   indexLabelFontSize: 9,
                   name: 'Hb A',
                   markerSize: 0,
-                  color: 'rgba(217, 143, 167,.9)',
+                  color: 'rgba(117, 243, 167,.9)',
                   lineColor: 'red',
                   lineThickness: 1,
                   dataPoints: [
@@ -121,7 +121,7 @@ export class ResultComponent implements OnInit, OnDestroy {
                   indexLabelFontSize: 9,
                   name: 'Hb A',
                   markerSize: 0,
-                  color: 'rgba(217, 143, 167,.9)',
+                  color: 'rgba(117, 243, 167,.9)',
                   lineColor: 'red',
                   lineThickness: 1,
                   dataPoints: [
@@ -260,6 +260,27 @@ export class ResultComponent implements OnInit, OnDestroy {
             { x: 999999999, y: 0 },
           ],
         },
+        {
+          type: 'splineArea',
+          indexLabelFontSize: 9,
+          name: 'HbA1c',
+          markerSize: 0,
+          color: 'rgba(217, 143, 167,.9)',
+          lineColor: 'red',
+          lineThickness: 1,
+          dataPoints: [
+            { x: -999999999, y: 0 },
+            { x: 80, y: 0 },
+            {
+              x: 90,
+              y: +this.mainUI?.others3,
+              indexLabel: "HbA1c",
+              indexLabelFontColor: 'black', indexLabelFontWeight: "bolder", indexLabelMaxWidth: 45
+            },
+            { x: 100, y: 0 },
+            { x: 999999999, y: 0 },
+          ],
+        },
         hbA,
         {
           type: 'splineArea',
@@ -306,7 +327,7 @@ export class ResultComponent implements OnInit, OnDestroy {
         {
           type: 'splineArea',
           indexLabelFontSize: 9,
-          name: 'hb S',
+          name: 'Hb S',
           markerSize: 0,
           color: 'rgba(154,18,133,.9)',
           lineColor: 'red',
